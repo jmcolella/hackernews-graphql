@@ -1,0 +1,36 @@
+type Query {
+  info: String!
+  feed: [Link!]!
+  link(id: ID!): Link!
+}
+
+type Mutation {
+  feed: FeedMutationType
+}
+
+type Link {
+  id: ID!
+   description: String!
+   url: String!
+}
+
+type FeedMutationType {
+  add(input: FeedInput!): Link!
+  update(input: FeedUpdateInput!): Link!
+  delete(input: FeedDeleteInput!): Link!
+}
+
+input FeedInput {
+  description: String!
+  url: String!
+}
+
+input FeedUpdateInput {
+  id: ID!
+  description: String
+  url: String
+}
+
+input FeedDeleteInput {
+  id: ID!
+}

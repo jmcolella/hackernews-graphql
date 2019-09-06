@@ -1,0 +1,11 @@
+{
+  "name": "hackernews-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jmcolella/hackernews-graphql.git",
+  "author": "John Colella <john.colella@policygenius.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  }
+}
