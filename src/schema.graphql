@@ -10,8 +10,8 @@ type Mutation {
 
 type Link {
   id: ID!
-   description: String!
-   url: String!
+  description: String!
+  url: String!
 }
 
 type FeedMutationType {
