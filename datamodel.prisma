@@ -3,4 +3,13 @@ type Link {
   createdAt: DateTime! @createdAt
   description: String!
   url: String!
+  author: User @relation(link: INLINE)
+}
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  posts: [Link!]! @relation(onDelete: CASCADE)
 }
