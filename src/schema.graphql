@@ -2,22 +2,43 @@ type Query {
   info: String!
   feed: [Link!]!
   link(id: ID!): Link!
+  users: [User!]!
 }
 
 type Mutation {
   feed: FeedMutationType
+  user: UserMutationType
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+  links: [Link!]!
+}
+
+type AuthPayload {
+  token: String
+  user: User
 }
 
 type Link {
   id: ID!
   description: String!
   url: String!
+  author: User
 }
 
 type FeedMutationType {
   add(input: FeedInput!): Link!
   update(input: FeedUpdateInput!): Link!
   delete(input: FeedDeleteInput!): Link!
+}
+
+type UserMutationType {
+  signup(input: SignUpInput!): AuthPayload!
+  login(input: LoginInput!): AuthPayload!
 }
 
 input FeedInput {
@@ -33,4 +54,15 @@ input FeedUpdateInput {
 
 input FeedDeleteInput {
   id: ID!
+}
+
+input SignUpInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
 }
