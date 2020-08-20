@@ -6,7 +6,7 @@
   "author": "John Colella <john.colella@policygenius.com>",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "graphql-yoga": "^1.18.3",
     "jsonwebtoken": "^8.5.1",
     "prisma-binding": "^2.3.16",
